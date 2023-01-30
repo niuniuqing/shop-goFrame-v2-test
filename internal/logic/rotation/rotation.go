@@ -2,6 +2,8 @@ package rotation
 
 import (
 	"context"
+	"github.com/gogf/gf/v2/database/gdb"
+	"github.com/gogf/gf/v2/frame/g"
 
 	"github.com/gogf/gf/v2/encoding/ghtml"
 	"shop-goFrame-v2-test/internal/service"
@@ -33,4 +35,17 @@ func (s *sRotation) Create(ctx context.Context, in model.RotationCreateInput) (o
 	}
 	//todo RotationId: int
 	return model.RotationCreateOutput{RotationId: int(lastInsertID)}, err
+}
+
+// Delete 删除
+func (s *sRotation) Delete(ctx context.Context, id uint) error {
+	//原先是tx *gdb.TX，现在为tx gdb.TX
+	return dao.RotationInfo.Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
+		// 删除轮播图
+		_, err := dao.RotationInfo.Ctx(ctx).Where(g.Map{
+			dao.RotationInfo.Columns().Id: id,
+			//}).Unscoped().Delete()   //Unscoped()物理删除一条数据
+		}).Delete() //软删除数据，即只在删除时间列加上删除时间
+		return err
+	})
 }
