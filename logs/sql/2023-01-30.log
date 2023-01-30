@@ -9,3 +9,75 @@
 2023-01-30 11:28:51.179 [DEBU] {d47bebed7df83e17c4a37e6906084d4f} [  2 ms] [default] [shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
 2023-01-30 11:28:51.181 [DEBU] {d47bebed7df83e17c4a37e6906084d4f} [  2 ms] [default] [shop] [rows:1  ] [txid:1] DELETE FROM `rotation_info` WHERE `id`=8
 2023-01-30 11:28:51.247 [DEBU] {d47bebed7df83e17c4a37e6906084d4f} [ 66 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
+2023-01-30 14:48:28.290 [DEBU] {5431738c62033f178b8873615470cd56} [ 87 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2023-01-30 14:48:28.320 [DEBU] {5431738c62033f178b8873615470cd56} [  9 ms] [default] [shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-01-30 14:48:28.324 [ERRO] {5431738c62033f178b8873615470cd56} [  2 ms] [default] [shop] [rows:0  ] [txid:1] UPDATE `rotation_info` SET `link`='https://www.jj20.com/bz/hhzw/xhtx/324472.html',`updated_at`='2023-01-30 14:48:28',`sort`=0,`pic_url`='https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=图片&hs=0&pn=1&spn=0&di=7169026086108397569&pi=0&rn=1&tn=baiduimagedetail&is=0,0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=1244512849,2042055354&os=1689209604,2238090705&simid=3341103314,196434738&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=0&oriquery=图片&objurl=https://img.jj20.com/up/allimg/1114/020R1102553/21020Q02553-1-1200.jpg&fromurl=ippr_z2C$qAzdH3FAzdH3Fooo_z&e3B33da_z&e3Bv54AzdH3FkzAzdH3FiizoAzdH3FxipxAzdH3Fn80l8c_z&e3Bip4s&gsm=&islist=&querylist=&dyTabStr=MCwzLDEsNiw0LDUsMiw3LDgsOQ==' WHERE (`id`=9) AND `deleted_at` IS NULL
+Error: Error 1406: Data too long for column 'pic_url' at row 1
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_core.go:663
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoUpdate
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_core.go:600
+5.  github.com/gogf/gf/v2/database/gdb.(*HookUpdateInput).Next
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_model_hook.go:138
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).Update
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_model_update.go:97
+7.  shop-goFrame-v2-test/internal/logic/rotation.(*sRotation).Update.func1
+    F:/code/shop-goFrame-v2-test/internal/logic/rotation/rotation.go:67
+8.  github.com/gogf/gf/v2/database/gdb.(*Core).Transaction
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_core_transaction.go:108
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).Transaction
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/database/gdb/gdb_model_transaction.go:27
+10. shop-goFrame-v2-test/internal/dao/internal.(*RotationInfoDao).Transaction
+    F:/code/shop-goFrame-v2-test/internal/dao/internal/rotation_info.go:84
+11. shop-goFrame-v2-test/internal/logic/rotation.(*sRotation).Update
+    F:/code/shop-goFrame-v2-test/internal/logic/rotation/rotation.go:55
+12. shop-goFrame-v2-test/internal/controller.(*cRotation).Update
+    F:/code/shop-goFrame-v2-test/internal/controller/rotation.go:38
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:152
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_func.go:55
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:129
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:75
+17. github.com/gogf/gf/v2/util/gutil.TryCatch
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/util/gutil/gutil.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:49
+19. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_middleware_handler_response.go:25
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:55
+21. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_func.go:55
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:54
+23. github.com/gogf/gf/v2/util/gutil.TryCatch
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/util/gutil/gutil.go:56
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:49
+25. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_middleware_tracing.go:78
+26. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:96
+27. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_func.go:55
+28. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:95
+29. github.com/gogf/gf/v2/util/gutil.TryCatch
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/util/gutil/gutil.go:56
+30. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_request_middleware.go:49
+31. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    E:/go/pkg/mod/github.com/gogf/gf/v2@v2.3.0/net/ghttp/ghttp_server_handler.go:132
+
+2023-01-30 14:48:28.333 [DEBU] {5431738c62033f178b8873615470cd56} [  0 ms] [default] [shop] [rows:0  ] [txid:1] ROLLBACK
+2023-01-30 14:48:44.299 [DEBU] {8806cf4b66033f178c887361a16183ae} [  0 ms] [default] [shop] [rows:0  ] [txid:2] BEGIN
+2023-01-30 14:48:44.300 [DEBU] {8806cf4b66033f178c887361a16183ae} [  1 ms] [default] [shop] [rows:1  ] [txid:2] UPDATE `rotation_info` SET `updated_at`='2023-01-30 14:48:44',`pic_url`='https://www.bilibili.com/video/BV1vd4y1r7FL/',`link`='https://www.jj20.com/bz/hhzw/xhtx/324472.html',`sort`=0 WHERE (`id`=9) AND `deleted_at` IS NULL
+2023-01-30 14:48:44.325 [DEBU] {8806cf4b66033f178c887361a16183ae} [ 25 ms] [default] [shop] [rows:0  ] [txid:2] COMMIT
