@@ -81,3 +81,21 @@ Stack:
 2023-01-30 14:48:44.299 [DEBU] {8806cf4b66033f178c887361a16183ae} [  0 ms] [default] [shop] [rows:0  ] [txid:2] BEGIN
 2023-01-30 14:48:44.300 [DEBU] {8806cf4b66033f178c887361a16183ae} [  1 ms] [default] [shop] [rows:1  ] [txid:2] UPDATE `rotation_info` SET `updated_at`='2023-01-30 14:48:44',`pic_url`='https://www.bilibili.com/video/BV1vd4y1r7FL/',`link`='https://www.jj20.com/bz/hhzw/xhtx/324472.html',`sort`=0 WHERE (`id`=9) AND `deleted_at` IS NULL
 2023-01-30 14:48:44.325 [DEBU] {8806cf4b66033f178c887361a16183ae} [ 25 ms] [default] [shop] [rows:0  ] [txid:2] COMMIT
+2023-01-30 15:17:54.546 [DEBU] {bc81d3b8fd043f17893e04559f9d43e3} [113 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2023-01-30 15:17:54.664 [DEBU] {bc81d3b8fd043f17893e04559f9d43e3} [ 21 ms] [default] [shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-01-30 15:17:54.702 [DEBU] {bc81d3b8fd043f17893e04559f9d43e3} [ 35 ms] [default] [shop] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `link`='https://www.jj20.com/bz/hhzw/xhtx/324472.html',`sort`=0,`updated_at`='2023-01-30 15:17:54',`pic_url`='https://www.bilibili.com/video/BV1vd4y1r7FL' WHERE (`id`=9) AND `deleted_at` IS NULL
+2023-01-30 15:17:54.738 [DEBU] {bc81d3b8fd043f17893e04559f9d43e3} [ 36 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
+2023-01-30 16:19:45.381 [DEBU] {60be28ca5d083f17014de84aa4e8772f} [ 59 ms] [default] [shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-01-30 16:19:45.429 [DEBU] {60be28ca5d083f17014de84aa4e8772f} [ 47 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`updated_at`,`created_at`,`sort`,`pic_url`,`link`) VALUES('2023-01-30 16:19:45','2023-01-30 16:19:45',0,'11','111') 
+2023-01-30 16:19:54.058 [DEBU] {5829e9d15f083f17024de84a5a014b9b} [ 16 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`created_at`,`sort`,`link`,`updated_at`,`pic_url`) VALUES('2023-01-30 16:19:54',0,'222','2023-01-30 16:19:54','22') 
+2023-01-30 16:20:01.431 [DEBU] {c40d548861083f17034de84a33afb48e} [ 34 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`link`,`created_at`,`pic_url`,`sort`,`updated_at`) VALUES('333','2023-01-30 16:20:01','33',0,'2023-01-30 16:20:01') 
+2023-01-30 16:20:38.681 [DEBU] {381c7f366a083f17044de84ad375758e} [  2 ms] [default] [shop] [rows:4  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10
+2023-01-30 16:20:38.682 [DEBU] {381c7f366a083f17044de84ad375758e} [  1 ms] [default] [shop] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2023-01-30 16:20:38.682 [DEBU] {381c7f366a083f17044de84ad375758e} [  0 ms] [default] [shop] [rows:4  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10
+2023-01-30 16:29:59.515 [DEBU] {a4658dc7ec083f17d825181dc560f542} [ 57 ms] [default] [shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-01-30 16:29:59.516 [DEBU] {a4658dc7ec083f17d825181dc560f542} [  0 ms] [default] [shop] [rows:4  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10
+2023-01-30 16:29:59.517 [DEBU] {a4658dc7ec083f17d825181dc560f542} [  0 ms] [default] [shop] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2023-01-30 16:30:28.388 [DEBU] {58a5a280f3083f175071056cedb794ff} [ 55 ms] [default] [shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-01-30 16:30:28.389 [DEBU] {58a5a280f3083f175071056cedb794ff} [  0 ms] [default] [shop] [rows:4  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10
+2023-01-30 16:30:28.390 [DEBU] {58a5a280f3083f175071056cedb794ff} [  0 ms] [default] [shop] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2023-01-30 16:30:28.391 [DEBU] {58a5a280f3083f175071056cedb794ff} [  1 ms] [default] [shop] [rows:4  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10
