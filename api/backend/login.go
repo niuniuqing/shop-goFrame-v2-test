@@ -10,6 +10,7 @@ type LoginDoReq struct {
 	Name     string `json:"name" v:"required#请输入账号"   dc:"账号"`
 	Password string `json:"password" v:"required#请输入密码"   dc:"密码(明文)"`
 }
+
 type LoginDoRes struct {
 	//todo
 	//返回一个登录信息
