@@ -28,7 +28,7 @@ type AdminInfoColumns struct {
 	UpdatedAt string //
 	DeletedAt string //
 	UserSalt  string // 加密盐
-	IsAdmin   string // 是否超级管理员
+	IsAdmin   string // 是否超级管理员，0非超管
 }
 
 // adminInfoColumns holds the columns for table admin_info.

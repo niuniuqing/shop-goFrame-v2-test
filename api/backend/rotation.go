@@ -15,7 +15,7 @@ type RotationReq struct {
 }
 type RotationRes struct {
 	//g.Meta  `mime:"text/html" example:"string"`
-	RotationId int `json:"rotationId"`
+	RotationId int `json:"rotation_id"`
 }
 
 // 轮播图删除

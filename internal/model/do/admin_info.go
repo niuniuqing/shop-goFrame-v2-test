@@ -20,5 +20,5 @@ type AdminInfo struct {
 	UpdatedAt *gtime.Time //
 	DeletedAt *gtime.Time //
 	UserSalt  interface{} // 加密盐
-	IsAdmin   interface{} // 是否超级管理员
+	IsAdmin   interface{} // 是否超级管理员，0非超管
 }

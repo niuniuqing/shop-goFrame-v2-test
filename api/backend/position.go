@@ -18,7 +18,7 @@ type PositionReq struct {
 }
 type PositionRes struct {
 	//g.Meta  `mime:"text/html" example:"string"`
-	PositionId int `json:"positionId"`
+	PositionId int `json:"position_id"`
 }
 
 // 手工位删除
