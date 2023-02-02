@@ -70,7 +70,7 @@ func (s *sRotation) Update(ctx context.Context, in model.RotationUpdateInput) er
 	})
 }
 
-// GetList 查询内容列表
+// GetList 查询轮播图列表
 func (s *sRotation) GetList(ctx context.Context, in model.RotationGetListInput) (out *model.RotationGetListOutput, err error) {
 	var (
 		m = dao.RotationInfo.Ctx(ctx)
